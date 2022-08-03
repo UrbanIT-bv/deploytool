@@ -1,0 +1,28 @@
+{
+    "name": "urbanit-bv/deploytool",
+    "type": "library",
+    "description": "Tool for deploying a webapp to the hosting.",
+    "keywords": ["deploytool"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jan Van Dyck",
+            "email": "jan@urbanit.be"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6.1",
+        "ext-readline": "*",
+        "phpseclib/phpseclib": "~3.0"
+    },
+    "bin": [
+        "phpunit"
+    ],
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    }
+}

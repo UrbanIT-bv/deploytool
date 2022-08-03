@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+require_once("vendor/autoload.php");
+
+use DeployTool\DeployOutput;
+use DeployTool\DeployTool;
+
+const DEPLOY_INFO_PATH=".deployinfo";
+
+if($argc<2) die(DeployOutput::error("Profiel niet opgegeven!")."\n");
+
+$tool=new DeployTool(DEPLOY_INFO_PATH."/", $argv[1]);
+if($argc==2)
+{
+	$tool->diffLocalAndRemoteFiles();
+}
+else
+{
+	if(strtoupper($argv[2])=="CONSOLE")
+	{
+		$tool->remoteConsole();
+	}
+	else
+	{
+		die(DeployOutput::error("Commando '".$argv[2]."' onbekend!")."\n");
+	}
+}
+
+echo("\n".DeployOutput::info("Done")."\n");

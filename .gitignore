@@ -1,0 +1,6 @@
+/.deployinfo
+/.idea
+/vendor
+composer.phar
+composer.lock
+shell.bat
